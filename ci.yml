@@ -1,0 +1,18 @@
+Global:
+    tool: build_submitter
+
+Default:
+    profile: [buildProduction]
+
+Profiles:
+    - profile:
+      name: buildProduction
+      env: deck_centos6u3_k3
+      command: export NODE_ENV=production && sh bin/build.sh
+      release: true
+
+    - profile:
+      name: buildDevelopment
+      env: deck_centos6u3_k3
+      command: export NODE_ENV=development && sh bin/build.sh
+      release: true

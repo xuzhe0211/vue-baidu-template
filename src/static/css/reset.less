@@ -1,0 +1,361 @@
+/* stylelint-disable */
+
+/***** reset.css ******/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
+    sans-serif;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 100px;
+}
+
+body {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1441px) {
+    html {
+        font-size: 66px;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1921px) {
+    html {
+        font-size: 75px;
+    }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2561px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width: 2560px) and (max-width: 3841px) {
+    html {
+        font-size: 133px;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    html {
+        font-size: 200px;
+    }
+}
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    color: #333;
+    min-width: 1280px;
+    font-weight: normal;
+    height: 100%;
+}
+
+input::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
+input:focus::-webkit-contacts-auto-fill-button {
+    opacity: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #999 !important;
+}
+
+//layout样式
+.layout{
+    &_content{
+        background:#fff;
+        box-shadow: 0 12px 16px 1px rgba(0, 21, 51, 0.03);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    &_title{
+        display: flex;
+        justify-content: flex-end;
+        height: 47px;
+        .title {
+            margin-bottom: 20px;
+        }
+        .btn-group {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+    }
+    &_filtrate{
+        padding: 15px 15px 0 20px;
+        .query-form {
+            overflow: hidden;
+            .query-form-item {
+                margin:0 20px 18px 0;
+                .el-form-item__label {
+                    width:100px !important;
+                    text-align: left;
+                }
+                .el-date-editor{
+                    width:215px !important;
+                    .el-range-separator{
+                        width:auto;
+                        color:#a3a3a3;
+                    }
+                }
+            }
+            .query-form-item:last-child {
+                float: right !important;
+            }
+        } 
+    }
+    &_popcontent{
+        .el-form-item__label{
+            text-align:right;
+        }
+        &-filter{
+            padding-right:10px;
+            box-sizing: border-box;
+        }
+        &-table{
+            padding:0 30px;
+            box-sizing: border-box;
+            .insert-data-form-item{
+                width:100%;
+            }
+        }
+    }
+}
+.home-parent{
+    .el-card{
+        .el-card__body{
+            position: relative;
+            height:100%;
+        }
+    }
+    .card-title{
+        height:28px;
+        font-size: 16px;
+        color: #282F3C;
+        font-weight: 500;
+    }
+    .home-item{
+        height:321px;
+    }
+    .totalAmount{
+        height:252px;
+        .totalAmount-productStatistics, .onShelfAmountInLatestAmonth-productStatistics{
+            height:122px;
+        }
+    }
+    .card-content{
+        position: absolute;
+        left:50%;
+        top:50%;
+        width:100%;
+        transform: translate(-50%, -50%);
+        height: 292px;
+        margin:auto;
+        margin:auto;
+        z-index:1;
+        &.card-content-total{
+            max-width: 320px;
+            .chart{
+                height:272px;
+                position: relative;
+                top:16px;
+            }
+        }
+        &.card-content-distribute{
+            max-width: 424px;
+            .chart{
+                height:280px;
+                position: relative;
+                top:25px;
+            }
+        }
+    }
+}
+@media (min-width: 1920px){
+    .el-main{
+        // background: #f00 !important;
+    }
+    .el-card__body {
+        padding: 32px;
+    }
+    .home-parent{
+        .home-item{
+            height:360px;
+        }
+        .card-content{
+            &.card-content-total{
+                max-width: 320px;
+                .chart{
+                    height:292px;
+                    position: relative;
+                    top:16px;
+                }
+            }
+        }
+    }
+}
+.el-table__fixed::before {
+    z-index: inherit;
+}
