@@ -1,5 +1,5 @@
 {
-  "name": "v2x-platform-bsp-console-front",
+  "name": "{{name}}",
   "version": "0.1.0",
   "private": true,
   "scripts": {
