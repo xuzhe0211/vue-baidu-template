@@ -1,0 +1,93 @@
+/**
+ * 通用样式，需手动在组件中调用，防止意外覆盖其他样式
+ */
+// 绝对定位居中
+.absCenter() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// 单行文字剪切
+.text-overflow() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 多行文字剪切
+.text-overflow-multiple(@line) {
+    display: -webkit-box;
+    -webkit-line-clamp: @line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+// 线性渐变
+.linear-transition(@duration: 0.3s) {
+    transition: all linear @duration;
+}
+
+// 小三角
+.triangle(@width) {
+    content: '';
+    display: block;
+    width: @width;
+    height: @width;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+    border-radius: 2px;
+    background: #2f9fff;
+}
+
+// 按钮交互优化样式
+.nice-btn() {
+    cursor: pointer;
+    user-select: none;
+}
+
+// echart 中使用的，带有小三角标的提示框
+.echart-tooltip-mixin() {
+    position: absolute;
+    transform: translate(-50%, calc(-100% - 1vw));
+    padding: 0.08rem;
+    font-size: 0.14rem;
+    border-radius: 0.06rem;
+    color: #fff;
+    background: #2f9fff;
+    line-height: 1;
+
+    .traffic-trend-chart-tooltip-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::after {
+        .triangle(0.5vw);
+
+        bottom: 1px;
+        z-index: 1;
+    }
+}
+
+// 模块状态图标
+.module-icon() {
+    display: inline-block;
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 50%;
+
+    &.normal {
+        background: #0bff5f;
+    }
+
+    &.abnormal {
+        background: #fd6060;
+    }
+
+    &.disabled {
+        background: #a3a3a3;
+    }
+}

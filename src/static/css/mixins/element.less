@@ -1,0 +1,24 @@
+/**
+ * 用于覆盖 ElementUI 的样式（推荐在 mixins 中覆盖 Mixin 样式，在组件中手动调用的方式覆盖 ElementUI 的样式）
+ */
+// Dialog
+.el-dialog {
+    .el-dialog__header {
+        border-bottom: 1px solid #e5e5e5;
+    }
+}
+
+.el-drawer {
+    .el-drawer__header {
+        border-bottom: 1px solid #e5e5e5;
+    }
+}
+.el-card.is-always-shadow, .el-card.is-hover-shadow:focus, .el-card.is-hover-shadow:hover{
+    background:#fff;
+    box-shadow: 0 12px 16px 1px rgba(0, 21, 51, 0.03) !important;
+    border-radius: 8px !important;
+    // border: none !important;
+}
+.el-tooltip__popper {
+    max-width: 800px;
+}

@@ -70,9 +70,9 @@ module.exports = {
     },
     chainWebpack: (config) => {
         // // 自动导入样式文件
-        // const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
-        // types.forEach((type) => addStyleResource(config.module.rule('less').oneOf(type)));
-        // config.resolve.symlinks(true); // 修复热更新失效
+        const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
+        types.forEach((type) => addStyleResource(config.module.rule('less').oneOf(type)));
+        config.resolve.symlinks(true); // 修复热更新失效
         // 删除预加载
         config.plugins.delete('preload');
         config.plugins.delete('prefetch');
@@ -83,7 +83,9 @@ function addStyleResource(rule) {
         .loader('style-resources-loader')
         .options({
             patterns: [
-                // path.resolve(__dirname, './src/static/css/element.less'),
+                path.resolve(__dirname, './src/static/css/mixins/element.less'),
+                path.resolve(__dirname, './src/static/css/mixins/info-mixins.less'),
+                path.resolve(__dirname, './src/static/css/mixins/common-mixins.less'),
             ]
         });
 }
