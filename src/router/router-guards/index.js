@@ -1,6 +1,6 @@
 /**
  * @file router guards
-*/
+ */
 import store from '@/store';
 // import {whiteList} from '@/router/router.config';
 import NProgress from 'nprogress';

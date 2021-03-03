@@ -32,7 +32,8 @@ export default {
 </script>
 <style scoped lang="less">
 .operation-management-container {
-    height:100%;
+    height: 100%;
+
     .el-aside {
         background-color: #252629;
         text-align: center;
@@ -54,14 +55,14 @@ export default {
     }
 
     .el-header {
-        background: #F6F8FA;
+        background: #f6f8fa;
         color: #424d55;
         height: 55px !important;
         padding: 0 32px 0 24px;
     }
 
     .el-main {
-        background-color: #F6F8FA;
+        background-color: #f6f8fa;
         color: #333;
         padding: 0.2rem;
     }

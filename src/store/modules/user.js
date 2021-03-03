@@ -68,7 +68,7 @@ export default {
                     msg: '密码修改未成功'
                 };
             }
-        },
+        }
     },
     mutations: {
         ROOT_UPDATE_USER_INFO_MUTATION: (state, {token, userinfo}) => {
@@ -78,7 +78,7 @@ export default {
             window.localStorage.setItem('v2xUserinfo', JSON.stringify(state.userinfo));
         },
         // 退出登录
-        ROOT_LOGOUT_MUTATION: state => {
+        ROOT_LOGOUT_MUTATION: (state) => {
             state.token = '';
             state.userinfo = '';
             window.localStorage.removeItem('v2xConsoleToken');

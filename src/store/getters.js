@@ -1,6 +1,5 @@
 /**
  * @file store getters
-*/
+ */
 
-export default {
-};
+export default {};

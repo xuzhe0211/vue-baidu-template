@@ -39,7 +39,7 @@ export default {
     },
     computed: {
         ...mapState({
-            userinfo: state => state.user.userinfo
+            userinfo: (state) => state.user.userinfo
         })
     },
     mounted() {},
@@ -61,19 +61,21 @@ export default {
         logoutHandler() {
             this.$confirm('您确定要退出登录吗?', '提示', {
                 type: 'warning'
-            }).then(async () => {
-                const isLogoutSuccess = await this.$store.dispatch('user/Layout');
-                if (isLogoutSuccess) {
-                    this.$message({
-                        type: 'success',
-                        message: '已退出',
-                        duration: 1000,
-                        onClose: () => {
-                            this.$router.replace({path: '/login'});
-                        }
-                    });
-                }
-            }).catch(() => {});
+            })
+                .then(async () => {
+                    const isLogoutSuccess = await this.$store.dispatch('user/Layout');
+                    if (isLogoutSuccess) {
+                        this.$message({
+                            type: 'success',
+                            message: '已退出',
+                            duration: 1000,
+                            onClose: () => {
+                                this.$router.replace({path: '/login'});
+                            }
+                        });
+                    }
+                })
+                .catch(() => {});
         }
     }
 };
@@ -81,11 +83,9 @@ export default {
 
 <style scoped lang="less">
 .robo-system-dropdown {
-    font-family: PingFangSC-Regular;
-    color: #424D55;
+    color: #424d55;
     font-size: 0.14rem;
     cursor: pointer;
-
 
     .robo-system-dropdown-user-icon {
         display: inline-block;

@@ -20,7 +20,7 @@ export default {
     props: {
         currentPage: {type: Number, default: 1},
         pageSize: {type: Number, default: 10},
-        total: {type: Number, default: 0},
+        total: {type: Number, default: 0}
     },
     data() {
         return {};
@@ -32,8 +32,8 @@ export default {
         },
         handleCurrentChange(currentPage) {
             this.$emit('current-change', currentPage);
-        },
-    },
+        }
+    }
 };
 </script>
 <style lang="less">

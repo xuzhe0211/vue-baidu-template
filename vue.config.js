@@ -1,23 +1,18 @@
 const path = require('path');
 // const Mock = require('./mock/mock.js');
-const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const rootPath = path.resolve(__dirname);
 
 module.exports = {
     publicPath: './',
-    outputDir: './dist',
     assetsDir: 'static',
-    runtimeCompiler: false,
-    productionSourceMap: false,
-    parallel: undefined,
     lintOnSave: process.env.NODE_ENV !== 'production',
     devServer: {
-        hot: true,
-        overlay: {
-            warnings: false,
-            errors: true
-        },
+        // overlay: {
+        //     warnings: false,
+        //     errors: true
+        // },
         // before(app, s) {
         //     Mock(app)
         // },
@@ -39,31 +34,16 @@ module.exports = {
         }
     },
     configureWebpack: {
-        output: {
-            sourcePrefix: ''
-        },
         plugins: [
-            new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /zh-cn|en/),
-            new webpack.DefinePlugin({
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            new StyleLintPlugin({
+                files: ['src/**/*.{vue,htm,html,css,sss,less,scss,sass}']
+            }),
+            new CompressionPlugin({
+                test: /\.js$|\.html$|\.css/, // 匹配文件名
+                threshold: 10240, // 对超过10K的数据进行压缩
+                deleteOriginalAssets: false
             })
-        ],
-        amd: {
-            // Enable webpack-friendly use of require in Cesium
-            toUrlUndefined: true
-        },
-        node: {
-            // Resolve node module use of fs
-            fs: 'empty'
-        },
-        optimization: {
-            usedExports: true
-        },
-        plugins: [new CompressionPlugin({
-            test: /\.js$|\.html$|\.css/, // 匹配文件名
-            threshold: 10240, // 对超过10K的数据进行压缩
-            deleteOriginalAssets: false
-        })]
+        ]
     },
     css: {
         extract: false

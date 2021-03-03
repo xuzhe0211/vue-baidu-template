@@ -6,7 +6,7 @@ import {constantRouterMap} from '@/router/router.config';
 export default {
     namespaced: true,
     state: {
-        routerSides: '',
+        routerSides: ''
     },
     actions: {
         SiderMenu({commit}, data) {
@@ -17,6 +17,6 @@ export default {
     mutations: {
         SET_ROUTERSIDES: (state, data) => {
             state.routerSides = data;
-        },
+        }
     }
 };

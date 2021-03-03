@@ -24,7 +24,7 @@ module.exports = {
     // end tag of jsx need to wrap
     jsxBracketSameLine: false,
     // brackets are required for arrow function parameter, even when there is only one parameter
-    arrowParens: 'as-needed',
+    arrowParens: 'always',
     // format the entire contents of the file
     rangeStart: 0,
     rangeEnd: Infinity,
@@ -40,14 +40,12 @@ module.exports = {
     endOfLine: 'lf',
     // Whether or not to indent the code inside <script> and <style> tags in Vue files
     vueIndentScriptAndStyle: false,
-    // 开启 eslint 支持
-    eslintIntegration: true,
     overrides: [
         {
-            files: ['*.css', '*.less', '*.sass', '*.scss'],
-            options: {
-                singleQuote: true
+            'files': ['*.css', '*.less', '*.sass', '*.scss'],
+            'options': {
+                'singleQuote': false
             }
-        }
+        },
     ]
 };
