@@ -1,4 +1,6 @@
-# v2x-platform-bsp-console-front
+# {{name}}
+
+> {{name}}
 
 ## Project setup
 ```
