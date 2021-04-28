@@ -38,7 +38,6 @@
         "eslint-plugin-vue": "^5.0.0",
         "less": "^3.12.2",
         "less-loader": "^7.0.0",
-        "node-sass": "^4.14.1",
         "nprogress": "^0.2.0",
         "lint-staged": "^9.5.0",
         "prettier": "^1.19.1",
